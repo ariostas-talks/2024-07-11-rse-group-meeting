@@ -651,7 +651,7 @@ class Slide9(Slide):
         text1 = MathTex(
         r"""
 \mathfrak{L}=\begin{blockarray}{ccc}
-& x_0 & x_1 \\
+& x_1 & x_2 \\
 \begin{block}{c(cc)}
   0 & 0 & 0 \\
   1 & 0 & 1 \\
@@ -675,7 +675,7 @@ class Slide9(Slide):
 \end{Bmatrix}
         """, font_size=40).shift(UP*1.).to_edge(RIGHT, buff=2)
 
-        text3 = MathTex(r"p(\vec{x})=2x_2+4x_1x_2\equiv\{3\rightarrow 2,\ 4\rightarrow 4\}", font_size=40).to_edge(LEFT, buff=1.5).shift(DOWN*1.5)
+        text3 = MathTex(r"p(\vec{x})=2x_2+4x_1x_2\equiv\{1\rightarrow 2,\ 4\rightarrow 4\}", font_size=40).to_edge(LEFT, buff=1.5).shift(DOWN*1.5)
         text4 = MathTex(r"q(\vec{x})=3+x_1+3x_2^2\equiv\{0\rightarrow 3,\ 2\rightarrow 1,\ 3\rightarrow 3\}", font_size=40).next_to(text3, DOWN, buff=0.3).to_edge(LEFT, buff=1.5)
         text5 = MathTex(r"p(\vec{x})\cdot q(\vec{x})=6x_2+14x_1x_2\equiv\{1\rightarrow 6,\ 4\rightarrow 14\}", font_size=40).next_to(text4, DOWN, buff=0.3).to_edge(LEFT, buff=1.5)
 
