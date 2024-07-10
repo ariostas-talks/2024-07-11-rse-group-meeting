@@ -361,7 +361,7 @@ class Slide4(Slide):
             r"Huge coefficients ($> 10^{100}$), requires multiprecision floats or rationals\\with abitrary-precision integers",
             font_size=35, buff=0.4
         ).next_to(text2, DOWN, buff=0.5).to_edge(LEFT, buff=1)
-        text3 = Tex(r"I couldn't find any existing software that could handle these requirements.", font_size=40, tex_environment="flushleft").next_to(blist, DOWN, buff=0.5).to_edge(LEFT, buff=0.5)
+        text3 = Tex(r"There is no existing software that can handle these requirements (AFAIK).", font_size=40, tex_environment="flushleft").next_to(blist, DOWN, buff=0.5).to_edge(LEFT, buff=0.5)
 
         self.play(FadeIn(text1))
         self.wait(0.1)
@@ -391,7 +391,7 @@ class Slide5(Slide):
         text2 = Tex(r"Difficulty", font_size=40, tex_environment="flushleft").to_edge(RIGHT, buff=3).shift(UP*2)
         text3 = MathTex(r"p(\vec{x})+q(\vec{x}),\ p(\vec{x})-q(\vec{x}),\ p(\vec{x})\cdot s", font_size=40).next_to(text1, DOWN, buff=0.5)
         text4 = MathTex(r"p(\vec{x})\cdot q(\vec{x})", font_size=40).next_to(text3, DOWN, buff=0.5)
-        text5 = MathTex(r"p(\vec{x})^n", font_size=40).next_to(text4, DOWN, buff=0.5)
+        text5 = MathTex(r"p(\vec{x})^n\ \ (n\in\mathbb{N})", font_size=40).next_to(text4, DOWN, buff=0.5)
         text6 = MathTex(r"e^{p(\vec{x})},\ p(\vec{x})^{-1},\ \text{Li}_2(p(\vec{x}))", font_size=40).next_to(text5, DOWN, buff=0.5)
 
         e1 = EmojiImageMobject("😊").scale_to_fit_height(text3.height*1.5).next_to(text3).to_edge(RIGHT, buff=3.5)
@@ -426,7 +426,7 @@ class Slide5(Slide):
 
         text1 = Tex(r"Construct auxiliary list $\mathfrak{L}$ with all $\vec{n}$, i.e. representing all possible monomials.\\Improves memory efficiency.", font_size=35, tex_environment="flushleft").to_edge(LEFT, buff=0.5).shift(UP*1.5)
         text2 = Tex(r"Construct auxiliary hash map $\mathfrak{M}$ that maps $\vec{n}$ to its index in $\mathfrak{L}$.\\Allows for fast multiplication of monomials.", font_size=35, tex_environment="flushleft").next_to(text1, DOWN, buff=1).to_edge(LEFT, buff=0.5)
-        text3 = Tex(r"Polynomials are represented as a struct with a hash map that maps the index\\of nonzero coefficients to their value, and a sorted list of nonzero coefficient\\indices (redundant, but helps for faster multiplication).", font_size=35, tex_environment="flushleft").next_to(text2, DOWN, buff=1).to_edge(LEFT, buff=0.5)
+        text3 = Tex(r"Polynomials are represented as a struct with a hash map that maps the index\\of nonzero coefficients to their value, and a list of nonzero coefficient indices\\sorted by monomial degree (redundant, but helps for faster multiplication).", font_size=35, tex_environment="flushleft").next_to(text2, DOWN, buff=1).to_edge(LEFT, buff=0.5)
 
         self.play(FadeIn(title))
         self.wait(0.1)
